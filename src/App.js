@@ -1,11 +1,12 @@
 import './App.css';
 import Header from "./Header";
+import {useState} from "react";
 
 function App() {
-  let name = "Guest"
+  const [name, setName] = useState("Guest");
 
   function login(){
-    name = "Batuhan"; 
+    setName("Batuhan");
   }
 
   return (
