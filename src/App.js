@@ -32,10 +32,11 @@ function App() {
         login("Batuhan");
         console.log("btn clicked");
       }}>Log in</button>
+      
       <ul>
-        {posts.map((post) => (
+        {posts.length ? posts.map((post) => (
         <li key={post.id}>{post.title}</li>
-        ))}
+        )) : "Loading"}
       </ul>
     </div>
   );
