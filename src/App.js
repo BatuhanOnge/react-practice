@@ -1,5 +1,6 @@
 import './App.css';
 import Header from "./Header";
+import AddPost from './AddPost';
 import {useState, useEffect} from "react";
 
 function App() {
@@ -14,15 +15,23 @@ function App() {
       .then(json => setPosts(json));
   }, []);
 
-  function login(){
-    setName("Batuhan");
+  function login(firstName){
+    setName(firstName);
   }
+
+  
 
   return (
     <div className="App">
       <Header title={name} />
+      
+      <AddPost posts={posts} setPosts={setPosts} />
+
       <p>Welcome to my blog</p>
-      <button onClick={login}>Log in</button>
+      <button onClick={() => {
+        login("Batuhan");
+        console.log("btn clicked");
+      }}>Log in</button>
       <ul>
         {posts.map((post) => (
         <li key={post.id}>{post.title}</li>
