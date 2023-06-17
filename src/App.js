@@ -5,7 +5,7 @@ function App() {
   let name = "Guest"
 
   function login(){
-    name = "Batuhan";
+    name = "Batuhan"; 
   }
 
   return (
